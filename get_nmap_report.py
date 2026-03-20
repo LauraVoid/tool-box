@@ -52,6 +52,7 @@ def get_open_ports(host):
     full_nmap_command = f"nmap -sCV -p {','.join(port_list)} {host['address']['@addr']} -oA detailed_scan"
     pyperclip.copy(full_nmap_command)
     print(f"Nmap command copied to clipboard: {GREEN}{full_nmap_command}{RESET}")
+    print(f"{BLUE}xsltproc  detailed_scan.xml -o detailed_scan.html{RESET}")
 
 
 if __name__ == "__main__":
